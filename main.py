@@ -3,7 +3,10 @@ class Class(object):
         self.name = name
         self.surname = sur_name
 
+    def present(self):
+        print(f"hello im {self.name} {self.surname}")
+
 
 obj_1 = Class("Alek", "Aleksanyan")
 
-print(f"{obj_1.name} {obj_1.surname}")
+obj_1.present()
