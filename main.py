@@ -13,14 +13,16 @@ class Circle:
 
     def area(self) -> str:
         """
-        :return: self.result_area
+        :arg self
+        :return: self.result_area in a string
         """
 
         return f"the area of the circle is: {self.result_area}"
 
     def perimeter(self) -> str:
         """
-        :return self.result_perimeter
+        :arg self
+        :return self.result_perimeter in a string
         """
 
         return f"the perimeter of the circle is: {self.result_perimeter}"
