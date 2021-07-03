@@ -6,10 +6,14 @@ import sys
 
 class Circle:
     def __init__(self, r: int) -> None:
-        self.radius = r
-        self.pi = math.pi
-        self.result_area = self.pi * self.radius**2
-        self.result_perimeter = 2 * self.pi * self.radius
+        try:
+            self.radius = r
+            self.pi = math.pi
+            self.result_area = self.pi * self.radius**2
+            self.result_perimeter = 2 * self.pi * self.radius
+        except ValueError:
+            print("the program needs an integer")
+            sys.exit()
 
     def area(self) -> str:
         """
@@ -32,12 +36,16 @@ class Circle:
 
 class Triangle:
     def __init__(self, h: int, b: int, right_side: int, left_side: int) -> None:
-        self.height = h
-        self.base = b
-        self.right = right_side
-        self.left = left_side
-        self.result_area = b * h / 2
-        self.result_perimeter = self.base + self.left + self.right
+        try:
+            self.height = h
+            self.base = b
+            self.right = right_side
+            self.left = left_side
+            self.result_area = b * h / 2
+            self.result_perimeter = self.base + self.left + self.right
+        except ValueError:
+            print("the program needs an integer")
+            sys.exit()
 
     def area(self) -> str:
         """
@@ -74,18 +82,7 @@ base = input("enter the base of the triangle(int): ")
 right = input("enter the right side of the triangle(int): ")
 left = input("enter the left side of the triangle(int): ")
 
-try:
-    height = int(height)
-    base = int(base)
-    right = int(right)
-    left = int(left)
-
-except ValueError:
-    print("the program needs an integer")
-    sys.exit()
-
-
-triangle = Triangle(height, base, right, left)
+triangle = Triangle(int(height), int(base), int(right), int(left))
 
 print(triangle.area())
 print(triangle.perimeter())
