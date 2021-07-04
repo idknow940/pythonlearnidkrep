@@ -37,7 +37,7 @@ class Triangle:
         print(f"{self} was deleted.")
 
     def __str__(self):
-        return "class Triangle"
+        return f"an instance of Triangle"
 
 
 class Cube:
@@ -68,7 +68,7 @@ class Cube:
         print(f"{self} was deleted.")
 
     def __str__(self):
-        return "class Cube"
+        return f"an instance of Cube"
 
 
 class Rect:
@@ -101,7 +101,7 @@ class Rect:
         print(f"{self} was deleted.")
 
     def __str__(self):
-        return "class Rect"
+        return f"an instance of Rect"
 
 
 tri_1 = Triangle(5, 10, 4, 5)
