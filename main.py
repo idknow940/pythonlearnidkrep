@@ -16,11 +16,11 @@ class Triangle:
         return super(Triangle, cls).__new__(cls)
 
     def is_alike(self, other):
-        if self.base + self.left + self.right + self.height == other.base + other.left + other.right + other.height:
+        if self.base == other.base and self.left == other.left and self.right == other.right:
             return True
 
     def __gt__(self, other):
-        if self.base + self.left + self.right + self.height > other.base + other.left + other.right + other.height
+        if self.base + self.left + self.right > other.base + other.left + other.right:
             return True
         else:
             return False
@@ -86,7 +86,7 @@ class Rect:
         return self.perimeter
 
     def __gt__(self, other):
-        if self.side + self.side_2 > other.side > other.side_2:
+        if self.side * 2 + self.side_2 * 2 > other.side * 2 + other.side_2 * 2:
             return True
         else:
             return False
