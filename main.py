@@ -1,59 +1,29 @@
-# class Human(object):
-#     def __init__(self, name: str, surname: str, age: int) -> None:
-#         self.name = name
-#         self.surname = surname
-#         self.age = age
-#
-#     def present(self):
-#         return f"Loading . . .\n{self.name}, {self.surname}, {self.age}"
-#
-#
-# human = Human("John", "Dohn", 258)
-#
-#
-# class Student(Human):
-#     def __init__(self, name: str, surname: str, age: int, uni: str) -> None:
-#         print("Student")
-#         # super(Student, self).__init__(name, surname, age)
-#         super().__init__(name, surname, age)
-#         # Human.__init__(self, name, surname, age)
-#         self.uni = uni
-#
-#     def present(self):
-#         return "lol"
-#
-#
-# class Employee(Human):
-#     def __init__(self, name: str, surname: str, age: int, work: str) -> None:
-#         print("Employee")
-#         # super(Student, self).__init__(name, surname, age)
-#         super().__init__(name, surname, age, work)
-#         # Human.__init__(self, name, surname, age)
-#         self.work = work
-#
-#     def present(self):
-#         return f"working in {self.work}"
-#
-#
-# class EconomyStudent(Student):
-#     def __init__(self, name: str, surname: str, age: int, uni: str) -> None:
-#         super().__init__(name, surname, age, uni)
-#
-#
-# class Mixed(Employee, Student):
-#     def __init__(self, name: str, surname: str, age: int, work: str, uni: str) -> None:
-#         # Employee.__init__(self, name, surname, age, work)
-#         # Student.__init__(self, name, surname, age, uni)
-#         super().__init__(name, surname, age, uni)
-#         self.all_list = [self.name, self.surname, str(self.age), self.work, self.uni]
-#
-#     # def present(self):
-#     #     a = ""
-#     #     for i in self.all_list:
-#     #         a += i
-#     #         a += "   "
-#     #     return a
-#
-#
-# mix_guy = Mixed("JOE", "WHITE", 256, "IDIOT.CORP", "IDIOT UNI")
-# print(mix_guy.present())
+import sys
+
+text = input("enter a problem (separate with spaces): ")
+
+list_text = text.split()
+
+num1 = list_text[0]
+num2 = list_text[2]
+
+if num1.isdigit() and num2.isdigit():
+    num1 = int(num1)
+    num2 = int(num2)
+else:
+    sys.exit()
+
+operator = list_text[1]
+
+res = 0
+
+if operator == "*":
+    res = num1 * num2
+elif operator == "/":
+    res = num1 / num2
+elif operator == "+":
+    res = num1 + num2
+elif operator == "-":
+    res = num1 - num2
+
+print(res)
