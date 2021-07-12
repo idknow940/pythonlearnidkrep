@@ -1,29 +1,35 @@
-import sys
+# class Resume:
+#     def __init__(self, name, surname, birthday, serial_number, password):
+#         self.name = name
+#         self.surname = surname
+#         self.birthday = birthday
+#         self._serial_number = serial_number
+#         self.__password = password
+#
+#     @property
+#     def age(self) -> int:
+#         return 2021 - self.birthday
+#
+#     @property
+#     def serial_number(self) -> str:
+#         return f"XXXX XXXX XXXX {self._serial_number[-4:]}"
+#
+#     @property
+#     def password(self) -> str:
+#         a = "*"
+#         for i in range(len(self.__password)):
+#             a += "*"
+#         return a
+#
+#
+# someone = Resume("Alek", "Aleksanyan", 2008, "1111555566668456", "LOLHAMONASdnAKNKDSNKWA")
+# print("{}".format(someone.serial_number))
+# print("{}".format(someone.password))
 
-text = input("enter a problem (separate with spaces): ")
+tuple_ = (
+    1, 2, 3, 5, 8
+)
 
-list_text = text.split()
-
-num1 = list_text[0]
-num2 = list_text[2]
-
-if num1.isdigit() and num2.isdigit():
-    num1 = int(num1)
-    num2 = int(num2)
-else:
-    sys.exit()
-
-operator = list_text[1]
-
-res = 0
-
-if operator == "*":
-    res = num1 * num2
-elif operator == "/":
-    res = num1 / num2
-elif operator == "+":
-    res = num1 + num2
-elif operator == "-":
-    res = num1 - num2
-
-print(res)
+list_ = [i for i in tuple_ if i % 2 == 0]
+dict_ = {key: key**key for key in tuple_}
+print(list_, dict_)
