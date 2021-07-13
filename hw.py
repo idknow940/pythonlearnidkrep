@@ -18,7 +18,7 @@ class Hotel:
         except ValueError:
             raise ValueError("wrong value types for hotel.")
 
-    def present(self):
+    def hotel_present(self):
         return "{} {} {} {} {} {}".format(self.name, self.place, self.mid_price, self.lux_price, self.room_mid,
                                           self.room_lux)
 
@@ -40,7 +40,7 @@ class Hotel:
         for i, v in self.room_lux.items():
             return f"{i}: {v}"
 
-    def discount(self):
+    def hotel_discount(self):
         dis_mid = round(self.mid_price - (self.mid_price * self.discount / 100))
         dis_lux = round(self.lux_price - (self.lux_price * self.discount / 100))
 
@@ -57,10 +57,10 @@ class Taxi:
         except ValueError:
             raise ValueError("Wrong value types for taxi.")
 
-    def present(self):
+    def taxi_present(self):
         return f"name: {self.name} types: {self.types} price for tour: {self.price_for_tour}"
 
-    def discount(self):
+    def taxi_discount(self):
         return round(self.price_for_tour - (self.price_for_tour * self.discount / 100))
 
 
@@ -79,7 +79,7 @@ class TourService(Hotel, Taxi):
         except ValueError:
             raise ValueError("Wrong value types for TourService.")
 
-    def present(self):
+    def tourservice_present(self):
         return f"Hello, we are {self.tour_name} tour service,\nwe will provide you a tour to {self.place}" \
                f"where we will stay in {self.hotel_name},\nwe will go there with {self.taxi_name}" \
                f"taxi service, they will provide {self.types} types of taxis,\n" \
@@ -90,7 +90,7 @@ class TourService(Hotel, Taxi):
 print(TourService.__mro__)
 
 tour = TourService("PyTour", "PyHotel", "Gyumri", 10000, 50000, 5000,
-                 "free", "busy", "busy", "busy", "free", "free", 10,
-                 "PyGo", "PyFlash", 10)
+                   "free", "busy", "busy", "busy", "free", "free", 10,
+                   "PyGo", "PyFlash", 10)
 
 print(tour.present())
