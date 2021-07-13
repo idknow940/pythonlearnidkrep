@@ -65,7 +65,7 @@ class Taxi:
 
 
 class TourService(Hotel, Taxi):
-    def __init__(self, name: str, hotel_name, hotel_place: str, mid_price: float, lux_price: float, price_for_tour,
+    def __init__(self, name: str, hotel_name: str, hotel_place: str, mid_price: float, lux_price: float, price_for_tour,
                  mid1: str, mid2: str, mid3: str, lux1: str, lux2: str, lux3: str, discount_hotel: int,
                  taxi_name: str, car_types: str, discount_taxi: int) -> None:
         Hotel.__init__(self, hotel_name, hotel_place, mid_price, lux_price, mid1, mid2, mid3, lux1, lux2, lux3,
@@ -93,4 +93,4 @@ tour = TourService("PyTour", "PyHotel", "Gyumri", 10000, 50000, 5000,
                    "free", "busy", "busy", "busy", "free", "free", 10,
                    "PyGo", "PyFlash", 10)
 
-print(tour.present())
+print(tour.tourservice_present())
