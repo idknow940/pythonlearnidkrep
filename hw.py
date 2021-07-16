@@ -1,40 +1,39 @@
 import os
 import sys
+import json
 
-if not os.path.exists("dir"):
-    path = os.getcwd()
-    create_folders = os.path.join(f"{path}/dir/dir1")
-    os.makedirs(create_folders)
-    path = create_folders
-    os.mkdir(os.path.join(f"{path}/dir2"))
-    os.makedirs(os.path.join(f"{path}/dir3/dir4"))
-    os.chdir("dir")
-    file = open("File.txt", "x")
-    file.close()
-    os.chdir("..")
-    path = os.getcwd()
-    print("CREATED!")
+line = 0
 
-    choice = input("delete(y/n): ")
-    if choice == "y":
-        os.chdir("dir")
-        os.remove("File.txt")
-        os.chdir("dir1")
-        os.rmdir("dir2")
-        os.chdir("dir3")
-        os.rmdir("dir4")
-        os.chdir("..")
-        os.rmdir("dir3")
-        os.chdir("..")
-        os.rmdir("dir1")
-        os.chdir("..")
-        os.rmdir("dir")
-    elif choice == "n":
-        print("bye")
-        sys.exit()
+output = ""
+final_price = 0
+final_quantity = 0
+products = []
+while True:
+    data = input("name, price, quantity: ").split()
+    dict_product = dict(
+        name=data[0],
+        price=data[1],
+        quantity=data[2]
+    )
+    final_price += int(data[1])
+    final_quantity += int(data[2])
+    dict_end = dict(
+        final_price=final_price,
+        final_quantity=final_quantity
+    )
+    line += 1
+    output += f"{line}: {dict_product}\n"
+    end = input("leave the loop(y/n): ")
+    products.append(dict_product)
+    if end == "y":
+        products.append(dict_end)
+        break
+    elif end == "n":
+        pass
     else:
-        print("??????")
+        print("????")
         sys.exit()
-else:
-    print("there is a folder")
-    sys.exit()
+
+with open("product.json", "w") as pj:
+    json.dump(products, pj, indent=4)
+    print("Added your product to the .json file!")
