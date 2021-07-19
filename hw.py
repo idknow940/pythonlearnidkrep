@@ -68,3 +68,4 @@
 #
 # py_imgs.download_links_jpeg()
 # py_imgs.download_links_png()
+# py_imgs.download_links()
