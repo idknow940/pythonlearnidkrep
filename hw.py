@@ -27,45 +27,46 @@
 
 # 2
 
-# import requests
-#
-# with open("hw.txt", "r") as file:
-#     txt = file.read()
-#
-#
-# class Methods:
-#     def __init__(self, text):
-#         self.links = text.split("\n")
-#
-#     def download_links(self):
-#         for i in self.links:
-#             response = requests.get(i)
-#             num = 0
-#             with open(f"img{num}.png", "wb") as F:
-#                 F.write(response.content)
-#             num += 1
-#
-#     def download_links_jpeg(self):
-#         num = 0
-#         for i in self.links:
-#             if "jpg" in i or "JPG" in i:
-#                 response = requests.get(i)
-#                 with open(f"img{num}.jpg", "wb") as f:
-#                     f.write(response.content)
-#                 num += 1
-#
-#     def download_links_png(self):
-#         num = 0
-#         for i in self.links:
-#             if "png" in i or "PNG" in i:
-#                 response = requests.get(i)
-#                 with open(f"img{num}.png", "wb") as f:
-#                     f.write(response.content)
-#                 num += 1
-#
-#
-# py_imgs = Methods(txt)
-#
+import requests
+
+with open("hw.txt", "r") as file:
+    txt = file.read()
+
+
+class Methods:
+    def __init__(self, text):
+        self.links = text.split("\n")
+
+    def download_links(self):
+        num = 0
+        for i in self.links:
+            response = requests.get(i)
+
+            with open(f"img{num}.png", "wb") as F:
+                F.write(response.content)
+            num += 1
+
+    def download_links_jpeg(self):
+        num = 0
+        for i in self.links:
+            if "jpg" in i or "JPG" in i:
+                response = requests.get(i)
+                with open(f"img{num}.jpg", "wb") as f:
+                    f.write(response.content)
+                num += 1
+
+    def download_links_png(self):
+        num = 0
+        for i in self.links:
+            if "png" in i or "PNG" in i:
+                response = requests.get(i)
+                with open(f"img{num}.png", "wb") as f:
+                    f.write(response.content)
+                num += 1
+
+
+py_imgs = Methods(txt)
+
 # py_imgs.download_links_jpeg()
 # py_imgs.download_links_png()
-# py_imgs.download_links()
+py_imgs.download_links()
