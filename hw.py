@@ -1,72 +1,53 @@
 # 1
 
+# import requests
 # import json
-# import yaml
+# import threading
 #
-# choice = input("yaml or json?: ")
-# if choice == "json":
-#     with open("hw.json", "r") as jj:
-#         data_json = json.load(jj)
 #
-#     with open("hw.txt", "w") as jt:
-#         json.dump(data_json, jt, indent=4)
+# def download(name, line=0):
+#     with open("hw.json", "r") as r:
+#         txt = json.load(r)
 #
-#     with open("main.yaml", "w") as jy:
-#         yaml.dump(data_json, jy)
-# elif choice == "yaml":
-#     with open("main.yaml", "r") as yy:
-#         data_yaml = yaml.load(yy)
+#     with open(f"{name}.png", "wb") as f:
+#         response = requests.get(txt[line])
+#         f.write(response.content)
 #
-#     with open("hw.json", "w") as yj:
-#         json.dump(data_yaml, yj, indent=4)
 #
-#     with open("hw.txt", "w") as yt:
-#         yaml.dump(data_yaml, yt, indent=4)
-# else:
-#     print(":/")
+# threads = []
+# for i in range(0, 10):
+#     x = threading.Thread(target=download, args=(i, i))
+#     x.start()
+#     threads.append(x)
+#
+# [i.join() for i in threads]
 
 # 2
 
-import requests
+# a = [
+#     1, 2, 3, 4, 516, 1561, 156, 165, 81
+# ]
+#
+# sum = 0
+#
+# for i in range(0, len(a), 1):
+#     sum += a[i]
+#
+# print(sum)
 
-with open("hw.txt", "r") as file:
-    txt = file.read()
+# 3
 
-
-class Methods:
-    def __init__(self, text):
-        self.links = text.split("\n")
-
-    def download_links(self):
-        num = 0
-        for i in self.links:
-            response = requests.get(i)
-
-            with open(f"img{num}.png", "wb") as F:
-                F.write(response.content)
-            num += 1
-
-    def download_links_jpeg(self):
-        num = 0
-        for i in self.links:
-            if "jpg" in i or "JPG" in i:
-                response = requests.get(i)
-                with open(f"img{num}.jpg", "wb") as f:
-                    f.write(response.content)
-                num += 1
-
-    def download_links_png(self):
-        num = 0
-        for i in self.links:
-            if "png" in i or "PNG" in i:
-                response = requests.get(i)
-                with open(f"img{num}.png", "wb") as f:
-                    f.write(response.content)
-                num += 1
-
-
-py_imgs = Methods(txt)
-
-# py_imgs.download_links_jpeg()
-# py_imgs.download_links_png()
-py_imgs.download_links()
+# a = [1, 2, [3, 4]]
+#
+#
+# def foo(list_):
+#     sum = 0
+#     for i in list_:
+#         if isinstance(i, list):
+#             sum += foo(i)
+#         else:
+#             sum += i
+#     return sum
+#
+#
+# print(foo(a))
