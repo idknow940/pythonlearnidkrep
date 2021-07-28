@@ -1,53 +1,33 @@
-# 1
+import json
+import sys
 
-# import requests
-# import json
-# import threading
-#
-#
-# def download(name, line=0):
-#     with open("hw.json", "r") as r:
-#         txt = json.load(r)
-#
-#     with open(f"{name}.png", "wb") as f:
-#         response = requests.get(txt[line])
-#         f.write(response.content)
-#
-#
-# threads = []
-# for i in range(0, 10):
-#     x = threading.Thread(target=download, args=(i, i))
-#     x.start()
-#     threads.append(x)
-#
-# [i.join() for i in threads]
+with open("users.json", "r") as j:
+    users = j.read()
 
-# 2
 
-# a = [
-#     1, 2, 3, 4, 516, 1561, 156, 165, 81
-# ]
-#
-# sum = 0
-#
-# for i in range(0, len(a), 1):
-#     sum += a[i]
-#
-# print(sum)
+def login_check(func):
+    def check(*args, **kwargs):
+        login = input("[server]: login: ")
+        password = input("[server]: password: ")
+        if login in users and password in users:
+            print("[client?(chgitem vorna asum)]: login successful!")
+            print(f"[client?(chgitem vorna asum)]: logged in as {login}.")
+            func(*args, **kwargs)
+        else:
+            print("[server]: forgot it? lol")
+            again = input("[server]: try again(y): ")
+            if again == "y":
+                check(*args, **kwargs)
+            else:
+                print("access denied.")
+                sys.exit()
 
-# 3
+    return check
 
-# a = [1, 2, [3, 4]]
-#
-#
-# def foo(list_):
-#     sum = 0
-#     for i in list_:
-#         if isinstance(i, list):
-#             sum += foo(i)
-#         else:
-#             sum += i
-#     return sum
-#
-#
-# print(foo(a))
+
+@login_check
+def printer(word):
+    print(word)
+
+
+printer("hi")

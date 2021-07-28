@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="323191af-c540-4d1e-9616-2d0443d0ac09" name="Default Changelist" comment="updated hw.py">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+    <list default="true" id="323191af-c540-4d1e-9616-2d0443d0ac09" name="Default Changelist" comment="updated rep">
+      <change afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw.json" beforeDir="false" afterPath="$PROJECT_DIR$/hw.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img0.png" beforeDir="false" afterPath="$PROJECT_DIR$/img0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626794134469</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updated rep">
+      <created>1627298625766</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1627298625766</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +173,18 @@
     <MESSAGE value="changed hw.py, added product.json" />
     <MESSAGE value="i don't have time to write lol" />
     <MESSAGE value="updated hw.py, and some other things lol" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated hw.py, and some other things lol" />
+    <MESSAGE value="updated rep" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated rep" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
